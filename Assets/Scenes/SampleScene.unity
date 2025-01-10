@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 1167384735}
   - component: {fileID: 1167384734}
   - component: {fileID: 1167384737}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -544,8 +544,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -932145476990562522, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
-      propertyPath: m_Mass
+      propertyPath: m_Drag
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -932145476990562522, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: m_Mass
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2268053584814056308, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
       propertyPath: m_LocalPosition.x
@@ -590,6 +594,22 @@ PrefabInstance:
     - target: {fileID: 6691859131248579855, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: _layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: _speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: _jumpForce
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: _layer.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
