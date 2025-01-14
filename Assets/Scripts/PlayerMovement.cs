@@ -5,6 +5,17 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 1.5f;
+    [SerializeField] private float _maxSpeed = 10.0f;
+    [SerializeField] private float _minSpeed = 1.0f;
+    public float Speed 
+    { 
+        get { return _speed; } 
+        set 
+        {
+            _speed = Mathf.Clamp(value, _minSpeed, _maxSpeed); 
+        } 
+    }
+
     [SerializeField] private float _jumpForce = 10.0f;
     [SerializeField] private int _layer;
 
