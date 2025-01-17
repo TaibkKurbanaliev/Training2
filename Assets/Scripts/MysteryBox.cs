@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class MysteryBox : Box
 {
-    protected override void Broke()
-    {
-        throw new System.NotImplementedException();
-    }
-
-    protected override void TakeDamage(float damage)
+    public override void TakeDamage(float damage)
     {
         Health -= damage;
+
+        if (Health <= 0)
+            Destroy(gameObject);
     }
+
+    protected override void Broke()
+    {
+        
+    }
+
 }

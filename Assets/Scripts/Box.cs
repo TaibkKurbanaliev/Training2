@@ -1,15 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Box : MonoBehaviour
+public abstract class Box : MonoBehaviour, IDamagable
 {
     [SerializeField] protected float Health = 100.0f; 
-    [SerializeField] protected List<PowerUp> PowerUps = new();
+    [SerializeField] protected List<GameObject> PowerUps = new();
+    public abstract void TakeDamage(float damage);
     protected abstract void Broke();
-    protected abstract void TakeDamage(float damage);
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        TakeDamage();
-    }
 }

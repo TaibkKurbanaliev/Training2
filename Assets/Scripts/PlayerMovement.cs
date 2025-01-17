@@ -42,9 +42,10 @@ public class PlayerMovement : MonoBehaviour
             _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             _isGrounded = false;
         }
+        CharacterController controller = GetComponent<CharacterController>();
     }
 
-    private void OnCollisionEnterw(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         
         if (collision.collider.gameObject.layer == _layer)
