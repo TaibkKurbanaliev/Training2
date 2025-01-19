@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 8929197553598256464}
   - component: {fileID: 3120557537073843972}
   - component: {fileID: 2564756008723660785}
+  - component: {fileID: 3548864055405318819}
   m_Layer: 0
   m_Name: Wooden Crate_ulehaj3fa
   m_TagString: Untagged
@@ -405,3 +406,24 @@ MonoBehaviour:
   Health: 100
   PowerUps:
   - {fileID: 2000381470081373125, guid: 0c91ad8febcd3814e9fa266543b3f3fd, type: 3}
+--- !u!65 &3548864055405318819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7628730303554710309}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.39400503, y: 0.583916, z: 0.5025215}
+  m_Center: {x: 0.0034361004, y: 0.29245785, z: 0.00007337332}

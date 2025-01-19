@@ -7,12 +7,12 @@ public class MysteryBox : Box
         Health -= damage;
 
         if (Health <= 0)
-            Destroy(gameObject);
+            Broke();
     }
 
     protected override void Broke()
     {
-        
+        Destroy(gameObject);
     }
 
 }
