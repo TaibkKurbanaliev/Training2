@@ -167,15 +167,95 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6857788192064577062, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0014586971
+      objectReference: {fileID: 0}
+    - target: {fileID: -6857788192064577062, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.060808897
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
       propertyPath: m_Name
       value: EnemyWizard
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9ef5bca80cdff214fabccec4857f0653, type: 2}
+    - target: {fileID: 6502182839619065283, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0010098189
+      objectReference: {fileID: 0}
+    - target: {fileID: 6502182839619065283, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08165811
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 85883403}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 85883404}
   m_SourcePrefab: {fileID: 100100000, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+--- !u!1 &85883402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+  m_PrefabInstance: {fileID: 85883401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &85883403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85883402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac91c22fc82df94998270e0fb112ba7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &85883404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85883402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Graph: {fileID: -3243364214162123463, guid: 7686d7c81f722084991fad223aef8871, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 6105204867882287404
+  - rid: 6105204867882287405
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 6105204867882287404
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 85883402}
+    - rid: 6105204867882287405
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 9052823449154963267
+          m_Value1: 16133262011819710373
+        Name: Target
+        m_Value: {fileID: 6165962865450324687}
 --- !u!1001 &304851977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1066,6 +1146,66 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 972671050}
   m_SourcePrefab: {fileID: 100100000, guid: b2e5052c2f356c14692d8e60f29d1029, type: 3}
+--- !u!1 &2122928716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2122928719}
+  - component: {fileID: 2122928718}
+  - component: {fileID: 2122928717}
+  m_Layer: 0
+  m_Name: VisualScripting SceneVariables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2122928717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122928716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2122928718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122928716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &2122928719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122928716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2132879029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1261,6 +1401,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585545}
     - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
       propertyPath: _jumpForce
       value: 350
       objectReference: {fileID: 0}
@@ -1317,3 +1461,4 @@ SceneRoots:
   - {fileID: 1302732856}
   - {fileID: 754783966}
   - {fileID: 85883401}
+  - {fileID: 2122928719}

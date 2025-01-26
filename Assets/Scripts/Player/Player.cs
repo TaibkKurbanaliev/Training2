@@ -7,6 +7,8 @@ public class Player : MonoBehaviour, IDamagable
     [SerializeField] private float _damage;
     [SerializeField] private Weapon _weapon;
 
+    public bool IsAlive { get; private set; }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out Coin coin))
