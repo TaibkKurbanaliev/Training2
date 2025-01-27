@@ -201,6 +201,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
       insertIndex: -1
       addedObject: {fileID: 85883404}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 85883407}
   m_SourcePrefab: {fileID: 100100000, guid: 32d772d0be276a94899fe8fddb93da84, type: 3}
 --- !u!1 &85883402 stripped
 GameObject:
@@ -256,6 +259,23 @@ MonoBehaviour:
           m_Value1: 16133262011819710373
         Name: Target
         m_Value: {fileID: 6165962865450324687}
+--- !u!114 &85883407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85883402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f64c6ae5ecf3044bae85771339ccc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 3
+  _maxDistance: 10
+  _target:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &304851977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1387,6 +1407,10 @@ PrefabInstance:
     - target: {fileID: 6691859131248579855, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6691859131248579855, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7210818236808466942, guid: 4fa37150cf5a58c4292b76160df3b138, type: 3}
       propertyPath: _layer
