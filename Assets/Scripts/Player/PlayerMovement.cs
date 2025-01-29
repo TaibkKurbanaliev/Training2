@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 1.5f;
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Camera _camera;
 
-    private Rigidbody _rb;
+    private CharacterController _characterController;
     private bool _isGrounded = true;
     private float _smoothTime = 0.12f;
     private float _rotationVelocity;
@@ -29,39 +30,36 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        _rb = GetComponent<Rigidbody>();
+        _characterController = GetComponent<CharacterController>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
+        Gravity();
+    }
+
+    private void Gravity()
+    {
+        throw new NotImplementedException();
     }
 
     private void Move()
     {
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-        var targetRotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg +
-                                  _camera.transform.eulerAngles.y;
-        
-        var rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref _rotationVelocity,
-                   _smoothTime);
-        transform.rotation = Quaternion.Euler(transform.rotation.x, rotation, transform.rotation.z);
-        Vector3 targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
+        if (!_isGrounded)
+            return;
 
-        _rb.AddForce(targetDirection * _speed, ForceMode.Force);
+        var input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (Input.GetKey(KeyCode.Space) && _isGrounded)
-        {
-            _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
-            _isGrounded = false;
-        }
+        var verticalSpeed = Mathf.Lerp(_characterController.velocity.y, _speed * input.y, _smoothTime);
+        var horizontalSpeed = Mathf.Lerp(_characterController.velocity.x, _speed * input.x, _smoothTime);
 
-        CharacterController controller = GetComponent<CharacterController>();
+        var direction = new Vector3(horizontalSpeed, 0.0f, verticalSpeed);
+        _characterController.Move(direction.normalized * Time.fixedDeltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        
         if (collision.collider.gameObject.layer == _layer)
         {
             Debug.Log("Kek");

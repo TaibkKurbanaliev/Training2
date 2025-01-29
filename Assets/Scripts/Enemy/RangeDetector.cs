@@ -12,7 +12,7 @@ public class RangeDetector : MonoBehaviour
     {
         if (Physics.SphereCast(transform.position, _radius, transform.forward, out _hit, _maxDistance, _target))
         {
-            Debug.Log(_hit.collider.gameObject);
+            ;
         }
     }
 

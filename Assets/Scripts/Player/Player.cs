@@ -9,16 +9,12 @@ public class Player : MonoBehaviour, IDamagable
 
     public bool IsAlive { get; private set; }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.TryGetComponent(out Coin coin))
+        if (other.gameObject.TryGetComponent(out Coin coin))
         {
             ErnMoney(coin.Value);
             Destroy(coin.gameObject);
-        }
-        else if (collision.gameObject.TryGetComponent(out IDamagable damagable))
-        {
-            damagable.TakeDamage(_damage);
         }
     }
 
