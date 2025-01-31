@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 2268053584814056308}
   - component: {fileID: 5766670166605175316}
   - component: {fileID: 8288457912471451289}
-  - component: {fileID: 4778486985989403260}
   - component: {fileID: 7210818236808466942}
   - component: {fileID: 884440157348047558}
-  m_Layer: 0
+  - component: {fileID: 5332941659708313465}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,27 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4778486985989403260
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6691859131248579855}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7210818236808466942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,11 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219a1445cc93eb848978c5e96b4f20fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1.5
+  _speed: 15
   _maxSpeed: 10
   _minSpeed: 1
-  _jumpForce: 10
-  _layer: 0
+  _jumpForce: 350
+  _gravity: -9.8
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
   _camera: {fileID: 0}
 --- !u!143 &884440157348047558
 CharacterController:
@@ -146,10 +128,26 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 0.1
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5332941659708313465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6691859131248579855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e0daea4c653f74bb3ed3bd54745cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: 0
+  _health: 0
+  _damage: 0
+  _weapon: {fileID: 0}
