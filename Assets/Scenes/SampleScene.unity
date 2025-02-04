@@ -420,13 +420,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07689636, y: 0.0000000035670797, z: -2.7511002e-10, w: 0.9970391}
-  m_LocalPosition: {x: -2.9563327, y: 1.4500003, z: -5.3678575}
+  m_LocalRotation: {x: 0.06678866, y: -0.0034405112, z: 0.0002303027, w: 0.9977612}
+  m_LocalPosition: {x: -2.5363326, y: 2.3900003, z: -5.3678575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.82, y: 0.06, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,7 +746,7 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
+  TargetOffset: {x: 0.4, y: 1, z: 0}
   Damping: {x: 0.5, y: 0.5}
   Lookahead:
     Enabled: 0
@@ -765,7 +765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetOffset: {x: 0, y: -0.8, z: 0}
+  TargetOffset: {x: 0.42, y: 0.14, z: 0}
   TrackerSettings:
     BindingMode: 4
     PositionDamping: {x: 1, y: 1, z: 1}
@@ -867,13 +867,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754783960}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.076896355, y: 0.000000003567079, z: -2.7510993e-10, w: 0.99703914}
-  m_LocalPosition: {x: -2.9563327, y: 1.4500003, z: -5.3678575}
+  m_LocalRotation: {x: 0.06678865, y: -0.003440511, z: 0.00023030264, w: 0.9977612}
+  m_LocalPosition: {x: -2.5363326, y: 2.3900003, z: -5.3678575}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.82, y: -0.06, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1265,18 @@ PrefabInstance:
     - target: {fileID: 603286518248314297, guid: efd375890d6a3e44d9d0bba468f24426, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266572441389314898, guid: efd375890d6a3e44d9d0bba468f24426, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 330585545}
+    - target: {fileID: 6266572441389314898, guid: efd375890d6a3e44d9d0bba468f24426, type: 3}
+      propertyPath: _lookSenseH
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266572441389314898, guid: efd375890d6a3e44d9d0bba468f24426, type: 3}
+      propertyPath: _acceleration
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

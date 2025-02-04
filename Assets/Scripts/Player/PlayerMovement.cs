@@ -1,30 +1,30 @@
+using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Windows;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(PlayerAnimator))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed = 1.5f;
     [SerializeField] private float _acceleration = 4.0f;
-    [SerializeField] private float _deceleration = 2.0f;
     [SerializeField] private float _maxSpeed = 10.0f;
-    [SerializeField] private float _minSpeed = 1.0f;
+    [SerializeField] private float _minSpeed = 2.0f;
     [SerializeField] private float _jumpForce = 10.0f;
     [SerializeField] private float _gravity = -9.8f;
+    [SerializeField] private float _drag = 5f;
 
     [SerializeField] private LayerMask _layer;
 
     [SerializeField] private Camera _camera;
+    [SerializeField] private float _lookSenseH = 0.01f;
 
     private CharacterController _characterController;
     private PlayerAnimator _playerAnimator;
-
-    private bool _isGrounded = false;
-    private float _smoothTime = 0.012f;
-    private float _rotationVelocity;
-    private float _verticalSpeed;
     private InputSystem_Actions _inputActions;
-    private Vector2 _currentVelocity;
+    private Quaternion _playerTargetRotation;
+
+    private float _speed = 1.0f;
 
     public float Speed 
     { 
@@ -45,32 +45,33 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Gravity();
         Move();
     }
 
-    private void Gravity()
-    {
-        //_verticalSpeed = Mathf.Clamp(_verticalSpeed + _gravity * Time.deltaTime, _gravity, _jumpForce);
-    }
 
     private void Move()
     {
         var input = _inputActions.Player.Move.ReadValue<Vector2>();
-        var targetDir = new Vector3(input.x, 0.0f, input.y);
+        var targetSpeed = _minSpeed;
 
-        if (input.magnitude > 0.0f)
-        {
-            _currentVelocity = Vector2.Lerp(_currentVelocity, input * _speed, _acceleration * Time.deltaTime);
-        }
-        else
-        {
-            _currentVelocity = Vector2.Lerp(_currentVelocity, input * _speed, _deceleration * Time.deltaTime);
-        }
+        if (input == Vector2.zero) targetSpeed = 0.0f;
 
-        _characterController.Move(new Vector3(_currentVelocity.x, 0.0f, _currentVelocity.y) * Time.deltaTime + Vector3.down * Time.deltaTime);
+        var cameraForwardXZ = new Vector3(_camera.transform.forward.x, 0f, _camera.transform.forward.z);
+        var cameraRightXZ = new Vector3(_camera.transform.right.x, 0.0f, _camera.transform.right.z);
+        Vector3 movementDirection = cameraRightXZ * input.x + cameraForwardXZ * input.y;
 
+        Vector3 movementDelta = movementDirection * _acceleration * Time.deltaTime;
+        Vector3 newVelocity = _characterController.velocity + movementDelta;
+
+        Vector3 currentDrag = newVelocity.normalized * _drag * Time.deltaTime;
+        newVelocity = (newVelocity.magnitude > _drag * Time.deltaTime) ? newVelocity - currentDrag : Vector3.zero;
+        _characterController.Move(newVelocity * Time.deltaTime);
         Debug.Log(_characterController.velocity);
-        _playerAnimator.SetMovementSpeed(new Vector2(_characterController.velocity.x, _characterController.velocity.z));
+    }
+
+    private void LateUpdate()
+    {
+        _playerTargetRotation.x += transform.eulerAngles.x + _lookSenseH * _inputActions.Player.Look.ReadValue<Vector2>().x;
+        transform.rotation = Quaternion.Euler(0f, _playerTargetRotation.x, 0f);
     }
 }
