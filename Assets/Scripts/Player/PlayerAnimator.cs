@@ -1,29 +1,42 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerLocomotionInput))]
 public class PlayerAnimator : MonoBehaviour
 {
+    [SerializeField] private float _locomotionBlendSpeed = 0.05f;
+
     private Animator _animator;
+    private PlayerLocomotionInput _playerInput;
+    private PlayerState _playerState;
 
-    private int _animIDHorizontalSpeed;
-    private int _animIDVerticalSpeed;
+    private int _animIDHorizontalSpeed = Animator.StringToHash("HorizontalSpeed");
+    private int _animIDVerticalSpeed = Animator.StringToHash("VerticalSpeed");
+    private int _animIDInputMagnitude = Animator.StringToHash("InputMagnitude");
 
-
-    private void Start()
+    private Vector2 _currentBlendInput = Vector3.zero;
+    
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
-        AssignAnimtionIDs();
+        _playerInput = GetComponent<PlayerLocomotionInput>();
+        _playerState = GetComponent<PlayerState>();
+    }                                                                     
+
+    private void Update()
+    {
+        UpdateAnimationState();
     }
 
-    private void AssignAnimtionIDs()
+    private void UpdateAnimationState()
     {
-        _animIDHorizontalSpeed = Animator.StringToHash("HorizontalSpeed");
-        _animIDVerticalSpeed = Animator.StringToHash("VerticalSpeed");
-    }
+        bool isSprinting = _playerState.CurrentPlayerMovementState == PlayerMovementState.Sprinting;
 
-    public void SetMovementSpeed(Vector2 speed)
-    {
-        _animator.SetFloat(_animIDHorizontalSpeed, speed.x);
-        _animator.SetFloat(_animIDVerticalSpeed,speed.y);
+        Vector2 inputTarget = isSprinting ? _playerInput.MovementInput * 1.5f : _playerInput.MovementInput;
+
+        _currentBlendInput = Vector2.Lerp(_currentBlendInput, inputTarget, _locomotionBlendSpeed);
+        _animator.SetFloat(_animIDHorizontalSpeed, _currentBlendInput.x);
+        _animator.SetFloat(_animIDVerticalSpeed, _currentBlendInput.y);
+        _animator.SetFloat(_animIDInputMagnitude, inputTarget.magnitude);
     }
 }

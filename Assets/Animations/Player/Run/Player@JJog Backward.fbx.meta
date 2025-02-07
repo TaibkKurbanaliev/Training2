@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81cc44a11ba28924896d07dc50aa86ba
+guid: 25961d521fc0a414cabcf30bea3b2f55
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle
+      name: Jog Backward
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 300
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

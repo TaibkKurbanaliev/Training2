@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d5510aca1edc2fe46b833d28a2bad376
+guid: 4a350def6a215e7499e66cb8bb802b8d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -31,11 +31,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walking
+      name: Jog Left
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 31
+      lastFrame: 21
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -896,7 +896,7 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 82ea034c11d19c74b90259fc56c4394b, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
